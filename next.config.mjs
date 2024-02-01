@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  rewrites: async () => [
+    {
+      source: "/podcast",
+      destination: "/podcast/list/1",
+    },
+    {
+      source: "/podcast/:page(\\d{1,})",
+      destination: "/podcast/list/:page",
+    },
+    {
+      source: "/podcast/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
+      destination: "/podcast/episode/:episode",
+    },
+  ],
+};
 
 export default nextConfig;

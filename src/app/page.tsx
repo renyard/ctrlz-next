@@ -1,9 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default async function Home() {
+  const data = await fetch("https://api.github.com/repos/vercel/next.js");
+  const res = await data.json();
   return (
     <main className={styles.main}>
+      <code>{JSON.stringify(res, null, 2)}</code>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;

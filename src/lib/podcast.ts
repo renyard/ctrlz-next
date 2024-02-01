@@ -11,7 +11,9 @@ export type episode = {
 
 export const getPodcast: () => Promise<episode[]> = async () => {
   const parser = new Parser();
-  const feed = await parser.parseURL("https://podcast.ctrlz.club/rss.xml");
+  // console.log("[podcast] Fetching podcast feed...");
+  const res = await fetch("https://podcast.ctrlz.club/rss.xml");
+  const feed = await parser.parseString(await res.text());
 
   const items = feed.items.map((item) => {
     const date = new Date(item.pubDate as string);
