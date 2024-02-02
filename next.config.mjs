@@ -13,6 +13,18 @@ const nextConfig = {
       source: "/podcast/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
       destination: "/podcast/episode/:episode",
     },
+    {
+      source: "/newsletter",
+      destination: "/newsletter/list/1",
+    },
+    {
+      source: "/newsletter/:page(\\d{1,})",
+      destination: "/newsletter/list/:page",
+    },
+    {
+      source: "/newsletter/:slug",
+      destination: "/newsletter/post/:slug",
+    },
   ],
 };
 
