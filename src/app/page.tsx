@@ -2,16 +2,13 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 export default async function Home() {
-  const data = await fetch("https://api.github.com/repos/vercel/next.js");
-  const res = await data.json();
   return (
     <main className={styles.main}>
-      <code>{JSON.stringify(res, null, 2)}</code>
       <div className={styles.description}>
-        <p>
+        {/* <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+        </p> */}
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
