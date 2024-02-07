@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  top: -6rem;
+  padding: 1rem;
+  padding-top: 7rem;
+  width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heading {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 4rem;
+  font-weight: 900;
+
+  & span {
+    display: block;
+    position: absolute;
+    padding: 1rem;
+
+    &:first-of-type {
+      top: 6rem;
+      left: 0;
+    }
+    &:last-of-type {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      text-align: right;
+    }
+  }
+}

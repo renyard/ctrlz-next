@@ -26,6 +26,16 @@ const nextConfig = {
       destination: "/newsletter/post/:slug",
     },
   ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "beehiiv-images-production.s3.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

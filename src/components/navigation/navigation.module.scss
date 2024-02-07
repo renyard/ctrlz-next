@@ -4,19 +4,21 @@ $breakpoint-md: 700px;
 .nav {
   position: relative;
   background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
   color: rgb(255, 255, 255);
   height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #eaeaea;
 }
 
 .header {
   & > a {
     display: inline-flex;
     align-items: center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 3rem;
 
     & > span {
       margin-left: 1rem;
@@ -67,6 +69,7 @@ $breakpoint-md: 700px;
   transform: scaleY(0);
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
+  font-size: 1.5rem;
   list-style: none;
   top: 100%;
   left: 0;
