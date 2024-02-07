@@ -30,6 +30,12 @@ export const getNewsletter = async () => {
     page++;
   }
 
+  posts.sort((a, b) => {
+    return (
+      new Date(b.publish_date).getTime() - new Date(a.publish_date).getTime()
+    );
+  });
+
   return posts;
 };
 

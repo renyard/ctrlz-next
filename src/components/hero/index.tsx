@@ -6,7 +6,7 @@ import { getNewsletter } from "@/lib/beehiiv";
 
 export default async function Hero() {
   const newsletters = await getNewsletter();
-  const newsletter = newsletters[newsletters.length - 1];
+  const newsletter = newsletters[0];
 
   return (
     <div className={styles.hero}>
