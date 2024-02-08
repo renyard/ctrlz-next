@@ -1,4 +1,5 @@
 import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
+import styles from "./post.module.scss";
 
 export async function generateStaticParams() {
   const items = await getNewsletter();
@@ -20,5 +21,29 @@ export default async function NewsletterPost({
 }) {
   const post = await getNewsletterPost(slug);
 
-  return <>{JSON.stringify(post, null, 2)}</>;
+  return (
+    <>
+      {/* Tailwind styles used by beehiiv */}
+      <style>
+        {`
+          .container img {
+            display: block;
+          }
+          .container .mx-auto {
+            margin: 0 auto;
+          }
+          .container .relative {
+            position: relative;
+          }
+          .container .relative iframe {
+            position: absolute;
+          }
+        `}
+      </style>
+      <div
+        className="container"
+        dangerouslySetInnerHTML={{ __html: post.content.free.web }}
+      />
+    </>
+  );
 }
