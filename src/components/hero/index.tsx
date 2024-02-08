@@ -10,7 +10,7 @@ export default async function Hero() {
 
   return (
     <div className={styles.hero}>
-      <Link href={`/newsletter/${newsletter.slug}`}>
+      <Link href={`/newsletter/${newsletter.slug}`} className={styles.link}>
         <Image
           src={newsletter.thumbnail_url}
           alt=""

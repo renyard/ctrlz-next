@@ -20,6 +20,7 @@ export default async function Tile({
           alt=""
           fill={true}
           className={styles["tile-image"]}
+          loading="lazy"
         />
         <span className={styles.title}>{title}</span>
       </Link>

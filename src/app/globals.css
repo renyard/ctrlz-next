@@ -90,6 +90,9 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
