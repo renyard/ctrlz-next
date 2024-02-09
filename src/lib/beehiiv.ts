@@ -36,7 +36,12 @@ export const getNewsletter = async () => {
     );
   });
 
-  return posts;
+  return posts.filter((post) => {
+    return (
+      post.status === "confirmed" &&
+      post.publish_date <= Math.floor(new Date().getTime() / 1000)
+    );
+  });
 };
 
 export const getNewsletterPost = async (slug: string) => {

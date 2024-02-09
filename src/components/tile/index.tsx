@@ -22,7 +22,9 @@ export default async function Tile({
           className={styles["tile-image"]}
           loading="lazy"
         />
-        <span className={styles.title}>{title}</span>
+        <span className={styles.title}>
+          <span>{title}</span>
+        </span>
       </Link>
     </li>
   );

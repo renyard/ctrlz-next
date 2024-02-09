@@ -1,4 +1,6 @@
 import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
+import Title from "@/components/title";
+
 import styles from "./post.module.scss";
 
 export async function generateStaticParams() {
@@ -23,9 +25,18 @@ export default async function NewsletterPost({
 
   return (
     <>
-      {/* Tailwind styles used by beehiiv */}
+      <Title
+        title={post.title}
+        subtitle={post.subtitle}
+        image={post.thumbnail_url}
+      />
+
       <style>
         {`
+          .container #web-header h1,
+          .container #web-header h3 {
+            display: none;
+          }
           .container img {
             display: block;
           }
@@ -37,6 +48,17 @@ export default async function NewsletterPost({
           }
           .container .relative iframe {
             position: absolute;
+          }
+          .container .bh__byline_wrapper img {
+            border-radius: 0 !important;
+          }
+          .container h2 {
+            text-transform: uppercase;
+            font-weight: 900 !important;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+          }
+          .container * {
+            border-radius: 0 !important;
           }
         `}
       </style>

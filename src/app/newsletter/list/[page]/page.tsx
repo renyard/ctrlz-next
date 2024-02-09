@@ -1,13 +1,23 @@
-import { getNewsletter } from "@/lib/beehiiv";
 import { Metadata } from "next";
+
+import { getNewsletter } from "@/lib/beehiiv";
+import Title from "@/components/title";
+
+import newspaperImg from "@/images/newspaper-bundle.jpg";
+import NewsletterTiles from "@/components/newsletter-tiles";
+import Pagination from "@/components/pagination";
 
 const PAGE_SIZE = 18;
 
-export async function generateStaticParams() {
+const getNumberOfPages = async () => {
   const { length } = await getNewsletter();
-  const numOfPages = Math.ceil(length / PAGE_SIZE);
+  return Math.ceil(length / PAGE_SIZE);
+};
 
-  const params = Array.from({ length: numOfPages }).map((_, i) => ({
+export async function generateStaticParams() {
+  const numberOfPages = await getNumberOfPages();
+
+  const params = Array.from({ length: numberOfPages }).map((_, i) => ({
     page: `${i + 1}`,
   }));
 
@@ -19,8 +29,25 @@ export const metadata: Metadata = {
   description: "Newsletter",
 };
 
-export default async function Newsletter({ params: { page = 1 } }) {
-  const items = await getNewsletter();
+export default async function Newsletter({ params: { page = "1" } }) {
+  const numberOfPages = await getNumberOfPages();
+  const pageNum = parseInt(page, 10);
 
-  return <>{JSON.stringify(items, null, 2)}</>;
+  const start = (pageNum - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+
+  const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
+
+  return (
+    <>
+      <Title title="Newsletter" image={newspaperImg} />
+      <NewsletterTiles start={start} end={end} />
+      <Pagination
+        numberOfPages={numberOfPages}
+        currentPage={pageNum}
+        href="/newsletter/list/[page]"
+        asPattern="/newsletter/[page]"
+      />
+    </>
+  );
 }
