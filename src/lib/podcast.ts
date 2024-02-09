@@ -1,13 +1,24 @@
+import fs from "fs";
+import { StaticImageData } from "next/dist/shared/lib/get-img-props";
 import Parser from "rss-parser";
 
 export type episode = {
   title: string;
   description: string;
   episode: string;
-  image: string;
+  image: StaticImageData;
   enclosure: string;
   slug: string;
 };
+
+// Load all images into an array from the @/images/podcast directory
+const images: StaticImageData[] = [];
+fs.readdirSync(`src/images/podcast`)
+  .filter((file) => /\.jpg$/.test(file))
+  .forEach(async (file) => {
+    const { default: image } = await import(`@/images/podcast/${file}`);
+    images.push(image);
+  });
 
 export const getPodcast: () => Promise<episode[]> = async () => {
   const parser = new Parser();
@@ -23,11 +34,15 @@ export const getPodcast: () => Promise<episode[]> = async () => {
       date.getDate(),
     ].map((value) => `${value}`.padStart(2, "0"));
 
+    const { episode } = item.itunes;
+    const featuring = item.content?.match(/^\d+\. (.*) -/gm);
+    // console.log(featuring);
+
     return {
       title: item.title as string,
       description: item["content:encoded"] as string,
-      episode: item.itunes.episode as string,
-      image: item.itunes.image as string,
+      episode,
+      image: images[episode % 34],
       enclosure: item.enclosure?.url || "",
       slug: `${year}-${month}-${day}`,
     };

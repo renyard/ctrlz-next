@@ -39,6 +39,10 @@
   font-weight: 400;
   text-transform: none;
 
+  & a {
+    text-decoration: underline;
+  }
+
   @media (min-width: 768px) {
     font-size: 2rem;
   }

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Image from "next/image";
 import styles from "./title.module.scss";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -8,7 +9,7 @@ export default function Title({
   image,
 }: {
   title: string;
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   image: string | StaticImport;
 }) {
   return (

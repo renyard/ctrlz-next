@@ -1,15 +1,17 @@
 import Link from "next/link";
 
 import styles from "./tile.module.scss";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export default async function Tile({
   title,
+  subtitle,
   image,
   link,
 }: {
   title: string;
-  image: string;
+  subtitle?: string;
+  image: string | StaticImageData;
   link: string;
 }) {
   return (
@@ -24,6 +26,7 @@ export default async function Tile({
         />
         <span className={styles.title}>
           <span>{title}</span>
+          {subtitle && <span className={styles.subtitle}></span>}
         </span>
       </Link>
     </li>

@@ -18,7 +18,8 @@
   width: 100%;
   height: 100%;
 
-  &:hover .tile-image {
+  &:hover .tile-image,
+  &:focus .tile-image {
     transform: scale(1.1);
   }
 }
@@ -50,5 +51,13 @@
 
   @media (min-width: $breakpoint-md) {
     font-size: 1.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 0.75rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1rem;
   }
 }
