@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.23.2":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.23.2":
   version: 7.23.9
   resolution: "@babel/runtime@npm:7.23.9"
   dependencies:
@@ -85,6 +85,24 @@ __metadata:
   version: 2.0.2
   resolution: "@humanwhocodes/object-schema@npm:2.0.2"
   checksum: 2fc11503361b5fb4f14714c700c02a3f4c7c93e9acd6b87a29f62c522d90470f364d6161b03d1cc618b979f2ae02aed1106fd29d302695d8927e2fc8165ba8ee
+  languageName: node
+  linkType: hard
+
+"@iconify/react@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "@iconify/react@npm:4.1.1"
+  dependencies:
+    "@iconify/types": ^2.0.0
+  peerDependencies:
+    react: ">=16"
+  checksum: 43b71a0eb4312cf0fa7412b568369e75b8a327b8b7d9fc3dce42b2d047326e39dd17541a8d915fb80b87b20a56eba1a9b52304410624b5814fdf3ad17da9196a
+  languageName: node
+  linkType: hard
+
+"@iconify/types@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@iconify/types@npm:2.0.0"
+  checksum: 029f58542c160e9d4a746869cf2e475b603424d3adf3994c5cc8d0406c47e6e04a3b898b2707840c1c5b9bd5563a1660a34b110d89fce43923baca5222f4e597
   languageName: node
   linkType: hard
 
@@ -819,6 +837,7 @@ __metadata:
     next: 14.1.0
     react: ^18
     react-dom: ^18
+    react-h5-audio-player: ^3.9.1
     rss-parser: ^3.13.0
     sass: ^1.70.0
     typescript: ^5
@@ -2809,6 +2828,19 @@ __metadata:
   peerDependencies:
     react: ^18.2.0
   checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
+  languageName: node
+  linkType: hard
+
+"react-h5-audio-player@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "react-h5-audio-player@npm:3.9.1"
+  dependencies:
+    "@babel/runtime": ^7.10.2
+    "@iconify/react": ^4.1.1
+  peerDependencies:
+    react: ^16.3.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
+  checksum: b0fc60e5bce030c55b8c3bf96ad903c2745febb2739260569c4ef5d94f2dbbde17fefece04581663350340376cdd4bec30fca74cb076c82355834f4116a15130
   languageName: node
   linkType: hard
 

@@ -1,4 +1,8 @@
+import Title from "@/components/title";
+import AudioPlayer from "@/components/audio-player";
 import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
+
+import styles from "./episode.module.scss";
 
 export async function generateStaticParams() {
   const items = await getPodcast();
@@ -28,5 +32,16 @@ export default async function Podcast({
 }) {
   const episode = await getPodcastEpisode(id);
 
-  return <>{JSON.stringify(episode, null, 2)}</>;
+  return (
+    <>
+      <Title title={episode.title} image={episode.image} />
+      <div className={styles.container}>
+        <AudioPlayer src={episode.enclosure} />
+        <div
+          className={styles.description}
+          dangerouslySetInnerHTML={{ __html: episode.description }}
+        />
+      </div>
+    </>
+  );
 }
