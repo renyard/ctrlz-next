@@ -18,8 +18,12 @@ export default async function Hero() {
           fill={true}
         />
         <h2 className={styles.heading}>
-          <span>Latest Newsletter</span>
-          <span>{newsletter.title}</span>
+          <span className={styles["primary-heading"]}>
+            <span>Latest Newsletter</span>
+          </span>
+          <span className={styles["secondary-heading"]}>
+            <span>{newsletter.title}</span>
+          </span>
         </h2>
       </Link>
     </div>
