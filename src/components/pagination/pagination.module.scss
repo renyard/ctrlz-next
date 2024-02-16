@@ -7,8 +7,7 @@
   background-color: black;
 
   li {
-    width: 4rem;
-    height: 4rem;
+    width: clamp(113.78px, 11.1111vw, 11.1111vw);
 
     a {
       display: block;
@@ -22,6 +21,10 @@
       background-color: #04a8ff;
       font-weight: 900;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+      &.active {
+        border: 1px solid white;
+      }
     }
   }
 }

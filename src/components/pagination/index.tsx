@@ -27,9 +27,24 @@ export default function Pagination({
         </Link>
       </li>
       {pageNumbers.map((pageNumber) => (
-        <li key={pageNumber}>
-          <Link href={href} as={getAsLink(asPattern, pageNumber)}>
-            {pageNumber}
+        <li
+          key={pageNumber}
+          className={
+            pageNumber < currentPage - 3 || pageNumber > currentPage + 3
+              ? styles.hidden
+              : undefined
+          }
+        >
+          <Link
+            href={href}
+            as={getAsLink(asPattern, pageNumber)}
+            className={
+              `${pageNumber}` === `${currentPage}` ? styles.active : undefined
+            }
+          >
+            {pageNumber === currentPage - 3 || pageNumber === currentPage + 3
+              ? "..."
+              : pageNumber}
           </Link>
         </li>
       ))}

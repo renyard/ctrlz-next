@@ -29,7 +29,8 @@ export const metadata: Metadata = {
   description: "Podcast",
 };
 
-export default async function Podcast({ params: { page = 1 } }) {
+export default async function Podcast({ params: { page: pageStr = "1" } }) {
+  const page = parseInt(pageStr, 10);
   const numberOfPages = await getNumberOfPages();
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;

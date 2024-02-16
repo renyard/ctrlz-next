@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   description: "Newsletter",
 };
 
-export default async function Newsletter({ params: { page = "1" } }) {
+export default async function Newsletter({ params: { page: pageStr = "1" } }) {
+  const page = parseInt(pageStr, 10);
   const numberOfPages = await getNumberOfPages();
-  const pageNum = parseInt(page, 10);
 
-  const start = (pageNum - 1) * PAGE_SIZE;
+  const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
   const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
@@ -44,7 +44,7 @@ export default async function Newsletter({ params: { page = "1" } }) {
       <NewsletterTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}
-        currentPage={pageNum}
+        currentPage={page}
         href="/newsletter/list/[page]"
         asPattern="/newsletter/[page]"
       />
