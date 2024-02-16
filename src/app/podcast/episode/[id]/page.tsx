@@ -1,6 +1,7 @@
 import Title from "@/components/title";
 import AudioPlayer from "@/components/audio-player";
 import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
+import NewsletterForm from "@/components/newsletter-form";
 
 import styles from "./episode.module.scss";
 
@@ -35,6 +36,7 @@ export default async function Podcast({
   return (
     <>
       <Title title={episode.title} image={episode.image} />
+      <NewsletterForm />
       <div className={styles.container}>
         <AudioPlayer src={episode.enclosure} />
         <div

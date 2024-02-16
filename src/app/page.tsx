@@ -9,9 +9,9 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <Hero />
+      <NewsletterForm />
       <NewsletterTiles />
       <MoreLink />
-      {/* <NewsletterForm /> */}
     </main>
   );
 }
