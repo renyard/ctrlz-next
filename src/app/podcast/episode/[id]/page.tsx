@@ -21,7 +21,7 @@ export async function generateMetadata({
   const episode = await getPodcastEpisode(id);
 
   return {
-    title: episode.title,
+    title: `${episode.title} | CTRL Z`,
     description: episode.description,
   };
 }

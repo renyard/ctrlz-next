@@ -25,8 +25,8 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Podcast",
-  description: "Podcast",
+  title: "Radio Show | CTRL Z",
+  description: "Your weekly fix of Modern Acid House & Techno.",
 };
 
 export default async function Podcast({ params: { page: pageStr = "1" } }) {
