@@ -23,6 +23,7 @@ export default async function Tile({
           fill={true}
           className={styles["tile-image"]}
           loading="lazy"
+          sizes="(min-width: 900px) 450px, (min-width: 700px) 350px, (min-width: 600px) 300px, 150px"
         />
         <span className={styles.title}>
           <span>{title}</span>

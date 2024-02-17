@@ -16,6 +16,7 @@ export default async function Hero() {
           alt=""
           className={styles["hero-image"]}
           fill={true}
+          sizes="(min-width: 900px) 900px, (min-width: 700px) 700px, (min-width: 600px) 600px, 300px"
         />
         <h2 className={styles.heading}>
           <span className={styles["primary-heading"]}>
