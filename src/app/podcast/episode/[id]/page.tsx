@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Title from "@/components/title";
 import AudioPlayer from "@/components/audio-player";
 import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
@@ -37,8 +38,28 @@ export default async function Podcast({
     <>
       <Title title={episode.title} image={episode.image} />
       <NewsletterForm />
+      <AudioPlayer src={episode.enclosure} className={styles.player} />
       <div className={styles.container}>
-        <AudioPlayer src={episode.enclosure} />
+        <p>
+          The CTRL Z radio show is broadcast weekly on{" "}
+          <Link href="https://datatransmission.co" target="_blank">
+            Data Transmission Radio
+          </Link>
+          ,{" "}
+          <Link href="https://undergroundkollektiv.co.uk">
+            Underground Kollektiv
+          </Link>
+          , Radio Roadhouse and on the podcast. It also goes out monthly on{" "}
+          <Link href="https://ibizaclubnews.net">Ibiza Club News Radio</Link>.
+        </p>
+
+        <ul className={styles.list}>
+          <li>Wednesday 5pm GMT/BST - Underground Kollektiv</li>
+          <li>Thursday 2pm GMT/BST - Data Transmission Radio</li>
+          <li>Friday - CTRL Z Podcast</li>
+          <li>Saturday 11pm GMT/BST - Radio Roadhouse</li>
+          <li>Monthly - Ibiza Club News Radio</li>
+        </ul>
         <div
           className={styles.description}
           dangerouslySetInnerHTML={{ __html: episode.description }}

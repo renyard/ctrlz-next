@@ -3,7 +3,8 @@
 }
 
 .player {
-  margin-top: 1rem;
+  margin: 0 0 1rem 0;
+  padding-top: 1rem;
   width: 100%;
 
   &::-webkit-media-controls-panel {
@@ -11,13 +12,27 @@
   }
 }
 
+.list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
 .description {
-  margin-top: 1rem;
+  margin: 1rem 0;
 
   ol {
     list-style-type: decimal;
     list-style-position: inside;
     padding: 0;
     margin: 0;
+
+    &::before {
+      content: "Tracklist";
+      font-size: large;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 1rem;
+    }
   }
 }
