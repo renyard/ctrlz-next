@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+import { getNewsletter } from "@/lib/beehiiv";
 
 import styles from "./hero.module.scss";
-import { getNewsletter } from "@/lib/beehiiv";
 
 export default async function Hero() {
   const newsletters = await getNewsletter();

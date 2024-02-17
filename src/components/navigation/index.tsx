@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-
-import styles from "./navigation.module.scss";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 import logo from "../../images/ctrlz_logo.png";
+
+import styles from "./navigation.module.scss";
 
 export default function Navigation() {
   const [navVisible, setNavVisible] = useState(false);

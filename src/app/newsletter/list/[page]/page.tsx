@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 
-import { getNewsletter } from "@/lib/beehiiv";
-import Title from "@/components/title";
-
-import newspaperImg from "@/images/newspaper-bundle.jpg";
 import NewsletterForm from "@/components/newsletter-form";
 import NewsletterTiles from "@/components/newsletter-tiles";
 import Pagination from "@/components/pagination";
+import Title from "@/components/title";
+import newspaperImg from "@/images/newspaper-bundle.jpg";
+import { getNewsletter } from "@/lib/beehiiv";
 
 const PAGE_SIZE = 18;
 

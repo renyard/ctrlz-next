@@ -1,4 +1,5 @@
 import { getNewsletter } from "@/lib/beehiiv";
+
 import Tile from "../tile";
 
 import styles from "./newsletter-tiles.module.scss";

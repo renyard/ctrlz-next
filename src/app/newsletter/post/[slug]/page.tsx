@@ -1,5 +1,5 @@
-import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
 import Title from "@/components/title";
+import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
 
 import styles from "./post.module.scss";
 

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Title from "@/components/title";
+
 import AudioPlayer from "@/components/audio-player";
-import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
 import NewsletterForm from "@/components/newsletter-form";
+import Title from "@/components/title";
+import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
 
 import styles from "./episode.module.scss";
 

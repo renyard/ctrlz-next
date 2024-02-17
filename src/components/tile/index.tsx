@@ -1,7 +1,7 @@
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import styles from "./tile.module.scss";
-import Image, { StaticImageData } from "next/image";
 
 export default async function Tile({
   title,

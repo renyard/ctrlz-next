@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
-import Image from "next/image";
-import styles from "./title.module.scss";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
+import { ReactNode } from "react";
+
+import styles from "./title.module.scss";
 
 export default function Title({
   title,

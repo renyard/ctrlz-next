@@ -13,7 +13,7 @@ export const getNewsletter = async () => {
           Authorization: auth,
         },
         cache: "force-cache",
-      }
+      },
     );
 
     if (!res.ok) {

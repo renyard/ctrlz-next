@@ -1,11 +1,11 @@
-import Pagination from "@/components/pagination";
-import PodcastTiles from "@/components/podcast-tiles";
-import { getPodcast } from "@/lib/podcast";
 import { Metadata } from "next";
 import Link from "next/link";
 
-import mixerImg from "@/images/mixer.jpg";
+import Pagination from "@/components/pagination";
+import PodcastTiles from "@/components/podcast-tiles";
 import Title from "@/components/title";
+import mixerImg from "@/images/mixer.jpg";
+import { getPodcast } from "@/lib/podcast";
 
 const PAGE_SIZE = 18;
 
