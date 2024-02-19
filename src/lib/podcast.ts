@@ -5,6 +5,7 @@ import Parser from "rss-parser";
 export type episode = {
   title: string;
   description: string;
+  featuredArtists: string[];
   episode: string;
   image: StaticImageData;
   enclosure: string;
@@ -35,12 +36,19 @@ export const getPodcast: () => Promise<episode[]> = async () => {
     ].map((value) => `${value}`.padStart(2, "0"));
 
     const { episode } = item.itunes;
-    const featuring = item.content?.match(/^\d+\. (.*) -/gm);
-    // console.log(featuring);
+    const featuring = item.content?.matchAll(/^\d+\. (.*) -/gm);
+
+    const featuredArtists = [];
+    let result = featuring?.next();
+    while (!result?.done) {
+      featuredArtists.push(result?.value[1]);
+      result = featuring?.next();
+    }
 
     return {
       title: item.title as string,
       description: item["content:encoded"] as string,
+      featuredArtists,
       episode,
       image: images[episode % 34],
       enclosure: item.enclosure?.url || "",

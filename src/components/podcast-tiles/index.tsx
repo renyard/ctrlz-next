@@ -4,6 +4,15 @@ import Tile from "../tile";
 
 import styles from "./podcast-tiles.module.scss";
 
+function shuffle(array: any[]) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 export default async function PodcastTiles({
   start = 1,
   end = 19,
@@ -15,14 +24,20 @@ export default async function PodcastTiles({
 
   return (
     <ul className={styles.tiles}>
-      {podcast.slice(start, end).map((episode) => (
-        <Tile
-          key={Math.random()}
-          title={episode.title}
-          image={episode.image}
-          link={`/podcast/${episode.slug}`}
-        />
-      ))}
+      {podcast.slice(start, end).map((episode) => {
+        shuffle(episode.featuredArtists);
+        const featuredArtists = episode.featuredArtists.slice(0, 3);
+
+        return (
+          <Tile
+            key={Math.random()}
+            title={episode.title}
+            subtitle={`Featuring ${featuredArtists.join(", ")} and more.`}
+            image={episode.image}
+            link={`/podcast/${episode.slug}`}
+          />
+        );
+      })}
     </ul>
   );
 }

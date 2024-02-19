@@ -56,6 +56,11 @@
 
 .subtitle {
   font-size: 0.75rem;
+  text-transform: none;
+  display: none;
+  @media (min-width: $breakpoint-sm) {
+    display: inline;
+  }
 
   @media (min-width: $breakpoint-md) {
     font-size: 1rem;

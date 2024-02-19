@@ -27,7 +27,14 @@ export default async function Tile({
         />
         <span className={styles.title}>
           <span>{title}</span>
-          {subtitle && <span className={styles.subtitle}></span>}
+          {subtitle && (
+            <>
+              <span className={styles.subtitle}>
+                <br />
+                {subtitle}
+              </span>
+            </>
+          )}
         </span>
       </Link>
     </li>
