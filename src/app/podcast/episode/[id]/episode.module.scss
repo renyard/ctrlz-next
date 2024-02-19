@@ -1,5 +1,10 @@
 .container {
   padding: 1rem;
+
+  & a {
+    color: #04a8ff;
+    text-decoration: underline;
+  }
 }
 
 .player {

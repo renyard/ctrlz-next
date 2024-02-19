@@ -50,7 +50,9 @@ export default async function Podcast({
           <Link href="https://undergroundkollektiv.co.uk">
             Underground Kollektiv
           </Link>
-          , Radio Roadhouse and on the podcast. It also goes out monthly on{" "}
+          , Radio Roadhouse and on the{" "}
+          <Link href="https://podcast.ctrlz.club">podcast</Link>. It also goes
+          out monthly on{" "}
           <Link href="https://ibizaclubnews.net">Ibiza Club News Radio</Link>.
         </p>
 
