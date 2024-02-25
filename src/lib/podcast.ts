@@ -41,7 +41,10 @@ export const getPodcast: () => Promise<episode[]> = async () => {
     const featuredArtists = [];
     let result = featuring?.next();
     while (!result?.done) {
-      featuredArtists.push(result?.value[1]);
+      const match = result?.value[1];
+      if (match) {
+        featuredArtists.push(match);
+      }
       result = featuring?.next();
     }
 
