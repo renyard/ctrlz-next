@@ -26,6 +26,23 @@ const nextConfig = {
       destination: "/newsletter/post/:slug",
     },
   ],
+  redirects: async () => [
+    {
+      source: "/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
+      destination: "/podcast/:episode",
+      permanent: true,
+    },
+    {
+      source: "/rss.xml",
+      destination: "https://podcast.ctrlz.club/rss.xml",
+      permanent: true,
+    },
+    {
+      source: "/links",
+      destination: "https://linktr.ee/ctrlzclub",
+      permanent: false,
+    },
+  ],
   images: {
     remotePatterns: [
       {
