@@ -1,7 +1,7 @@
 import Title from "@/components/title";
 import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
 
-import styles from "./post.module.scss";
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const items = await getNewsletter();
