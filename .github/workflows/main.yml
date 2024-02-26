@@ -63,7 +63,7 @@ jobs:
         run: yarn --from-lockfile
 
       - name: yarn build
-        run: yarn build
+        run: yarn build && rm -rf ./build/cache
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
