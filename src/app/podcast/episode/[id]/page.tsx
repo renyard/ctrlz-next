@@ -7,8 +7,6 @@ import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
 
 import styles from "./episode.module.scss";
 
-export const runtime = "edge";
-
 export async function generateStaticParams() {
   const items = await getPodcast();
 

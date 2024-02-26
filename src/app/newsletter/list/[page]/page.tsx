@@ -7,8 +7,6 @@ import Title from "@/components/title";
 import newspaperImg from "@/images/newspaper-bundle.jpg";
 import { getNewsletter } from "@/lib/beehiiv";
 
-export const runtime = "edge";
-
 const PAGE_SIZE = 18;
 
 const getNumberOfPages = async () => {

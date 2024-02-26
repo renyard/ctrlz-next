@@ -7,8 +7,6 @@ import Title from "@/components/title";
 import mixerImg from "@/images/mixer.jpg";
 import { getPodcast } from "@/lib/podcast";
 
-export const runtime = "edge";
-
 const PAGE_SIZE = 18;
 
 const getNumberOfPages = async () => {

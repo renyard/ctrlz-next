@@ -1,7 +1,7 @@
 import Title from "@/components/title";
 import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
 
-export const runtime = "edge";
+import styles from "./post.module.scss";
 
 export async function generateStaticParams() {
   const items = await getNewsletter();
