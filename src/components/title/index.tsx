@@ -15,7 +15,13 @@ export default function Title({
 }) {
   return (
     <div className={styles.container}>
-      <Image src={image} alt="" fill={true} className={styles.image} />
+      <Image
+        src={image}
+        alt=""
+        fill={true}
+        loading="eager"
+        className={styles.image}
+      />
       <h1 className={styles.heading}>
         <span>{title}</span>
       </h1>
