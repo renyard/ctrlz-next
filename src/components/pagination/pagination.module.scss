@@ -17,13 +17,13 @@
       text-decoration: none;
       text-align: center;
       line-height: 2rem;
-      color: #fff;
+      color: black;
       background-color: #04a8ff;
       font-weight: 900;
       font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 
       &.active {
-        border: 1px solid white;
+        border: 1px solid black;
       }
     }
   }

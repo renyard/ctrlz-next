@@ -13,7 +13,7 @@ export default function NewsletterForm() {
       <div>
         <iframe
           className={styles.iframe}
-          src="https://embeds.beehiiv.com/9505af10-3840-4257-b5ed-9fd03f5ef1ad?slim=true"
+          src="https://embeds.beehiiv.com/eb5545ec-8b05-407e-8c5c-e69ac2e5254c?slim=true"
           data-test-id="beehiiv-embed"
           frameBorder="0"
           scrolling="no"

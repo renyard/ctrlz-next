@@ -57,6 +57,9 @@ export default async function NewsletterPost({
             font-weight: 900 !important;
             font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
           }
+          .container button {
+            color: black !important;
+          }
           .container * {
             border-radius: 0 !important;
           }
