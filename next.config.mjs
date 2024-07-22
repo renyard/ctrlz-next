@@ -51,6 +51,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "radiojar-lib.appspot.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

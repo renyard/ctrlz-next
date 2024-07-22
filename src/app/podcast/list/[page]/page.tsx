@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+import LiveStream from "@/components/live-stream";
 import Pagination from "@/components/pagination";
 import PodcastTiles from "@/components/podcast-tiles";
 import Title from "@/components/title";
@@ -63,6 +64,7 @@ export default async function Podcast({ params: { page: pageStr = "1" } }) {
         }
         image={mixerImg}
       />
+      <LiveStream src="http://stream.radiojar.com/y25dd250wp3vv" />
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}

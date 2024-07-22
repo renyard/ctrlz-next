@@ -1353,6 +1353,7 @@ __metadata:
     "@vercel/speed-insights": "npm:^1.0.10"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.1.0"
+    fetch-jsonp: "npm:^1.3.0"
     next: "npm:14.1.0"
     prettier: "npm:^3.2.5"
     react: "npm:^18"
@@ -1971,6 +1972,13 @@ __metadata:
   dependencies:
     reusify: "npm:^1.0.4"
   checksum: 10/a443180068b527dd7b3a63dc7f2a47ceca2f3e97b9c00a1efe5538757e6cc4056a3526df94308075d7727561baf09ebaa5b67da8dcbddb913a021c5ae69d1f69
+  languageName: node
+  linkType: hard
+
+"fetch-jsonp@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "fetch-jsonp@npm:1.3.0"
+  checksum: 10/898cc962ec4d82df37131fcb2ea35a0d141c530f1a9d5b3841a2b6fc24420ad6d8c33fdeefd943828c40543f7c58f384c8551f1f7aa4f8edf5e51487b9724a43
   languageName: node
   linkType: hard
 
