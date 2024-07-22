@@ -41,7 +41,7 @@ export default async function Podcast({ params: { page: pageStr = "1" } }) {
   return (
     <>
       <Title
-        title="Radio Show"
+        title="Radio"
         subtitle={
           <>
             Listen on the{" "}
@@ -69,8 +69,8 @@ export default async function Podcast({ params: { page: pageStr = "1" } }) {
       <Pagination
         numberOfPages={numberOfPages}
         currentPage={page}
-        href="/podcast/list/[page]"
-        asPattern="/podcast/[page]"
+        href="/radio/list/[page]"
+        asPattern="/radio/[page]"
       />
     </>
   );

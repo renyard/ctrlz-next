@@ -39,7 +39,7 @@ export default function Navigation() {
           <Link href="/newsletter">Newsletter</Link>
         </li>
         <li>
-          <Link href="/podcast">Radio Show</Link>
+          <Link href="/radio">Radio</Link>
         </li>
         <li>
           <Link href="https://store.ctrlz.club">Store</Link>

@@ -34,7 +34,7 @@ export default async function PodcastTiles({
             title={episode.title}
             subtitle={`Featuring ${featuredArtists.join(", ")} and more.`}
             image={episode.image}
-            link={`/podcast/${episode.slug}`}
+            link={`/radio/${episode.slug}`}
           />
         );
       })}

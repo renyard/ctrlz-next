@@ -2,16 +2,16 @@
 const nextConfig = {
   rewrites: async () => [
     {
-      source: "/podcast",
-      destination: "/podcast/list/1",
+      source: "/radio",
+      destination: "/radio/list/1",
     },
     {
-      source: "/podcast/:page(\\d{1,})",
-      destination: "/podcast/list/:page",
+      source: "/radio/:page(\\d{1,})",
+      destination: "/radio/list/:page",
     },
     {
-      source: "/podcast/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
-      destination: "/podcast/episode/:episode",
+      source: "/radio/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
+      destination: "/radio/episode/:episode",
     },
     {
       source: "/newsletter",
@@ -28,8 +28,18 @@ const nextConfig = {
   ],
   redirects: async () => [
     {
+      source: "/podcast",
+      destination: "/radio",
+      permanent: true,
+    },
+    {
       source: "/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
-      destination: "/podcast/:episode",
+      destination: "/radio/:episode",
+      permanent: true,
+    },
+    {
+      source: "/podcast/:episode(\\d{4,4}-\\d{2,2}-\\d{2,2})",
+      destination: "/radio/:episode",
       permanent: true,
     },
     {
