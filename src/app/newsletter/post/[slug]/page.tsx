@@ -12,8 +12,9 @@ export async function generateStaticParams() {
 }
 
 export const metadata = {
-  title: "Newsletter",
-  description: "Newsletter",
+  title: "Newsletter | CTRL Z",
+  description:
+    "A bitesize weekly newsletter with the latest tunes and updates from CTRL Z",
 };
 
 export default async function NewsletterPost({
