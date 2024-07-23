@@ -41,7 +41,7 @@ export default async function Podcast({ params: { page: pageStr = "1" } }) {
   return (
     <>
       <Title
-        title="Radio"
+        title="CTRL Z Radio"
         subtitle={
           <>
             Listen on the{" "}
