@@ -2,6 +2,25 @@
   background-color: #04a8ff;
 }
 
+@keyframes spin {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(0.6) rotate(180deg);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+.image-loading {
+  animation: spin 2s infinite;
+}
+
 .now-playing-image {
   display: block;
   margin: 0 auto;

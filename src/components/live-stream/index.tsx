@@ -4,7 +4,7 @@ import fetchJsonp from "fetch-jsonp";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-import defaultImage from "../../images/Radio Artwork.png";
+import defaultImage from "../../images/ctrlz-logo-small.png";
 import AudioPlayer from "../audio-player";
 
 import styles from "./live-stream.module.scss";
@@ -17,7 +17,7 @@ export default function LiveStream({
   className?: string;
 }) {
   const [image, setImage] = useState(defaultImage);
-
+  const [imageLoading, setImageLoading] = useState(true);
   useEffect(() => {
     const updateThumbnail = async () => {
       const nowPlaying = fetchJsonp(
@@ -25,7 +25,8 @@ export default function LiveStream({
       ).then(async (res) => {
         const { thumb } = await res.json();
 
-        setImage(thumb || null);
+        setImageLoading(false);
+        setImage(thumb || defaultImage);
       });
     };
 
@@ -45,7 +46,7 @@ export default function LiveStream({
         width={640}
         height={640}
         loading="eager"
-        className={styles["now-playing-image"]}
+        className={`${styles["now-playing-image"]} ${imageLoading ? styles["image-loading"] : ""}`}
       />
       <AudioPlayer src={src} />
     </div>
