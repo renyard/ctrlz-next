@@ -33,6 +33,11 @@ const nextConfig = {
       permanent: true,
     },
     {
+      source: "/radio-station",
+      destination: "/radio",
+      permanent: true,
+    },
+    {
       source: "/rss.xml",
       destination: "https://podcast.ctrlz.club/rss.xml",
       permanent: true,
