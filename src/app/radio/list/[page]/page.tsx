@@ -64,7 +64,7 @@ export default async function Podcast({ params: { page: pageStr = "1" } }) {
         }
         image={mixerImg}
       />
-      <LiveStream src="http://stream.radiojar.com/y25dd250wp3vv" />
+      <LiveStream src="https://s2.radio.co/s738c40d83/listen" />
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}

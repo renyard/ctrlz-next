@@ -20,14 +20,15 @@ export default function LiveStream({
   const [imageLoading, setImageLoading] = useState(true);
   useEffect(() => {
     const updateThumbnail = async () => {
-      const nowPlaying = fetchJsonp(
-        "https://proxy.radiojar.com/api/stations/y25dd250wp3vv/now_playing/",
-      ).then(async (res) => {
-        const { thumb } = await res.json();
+      const response = await fetch(
+        "https://public.radio.co/stations/s738c40d83/status",
+      );
+      const {
+        current_track: { artwork_url_large: thumb },
+      } = await response.json();
 
-        setImageLoading(false);
-        setImage(thumb || defaultImage);
-      });
+      setImageLoading(false);
+      setImage(thumb || defaultImage);
     };
 
     updateThumbnail();
@@ -36,10 +37,8 @@ export default function LiveStream({
     return () => clearInterval(timer);
   }, []);
 
-  console.log({ image });
-
   return (
-    <div className={styles["stream-container"]}>
+    <div className={`${styles["stream-container"]} ${className}`}>
       <Image
         src={image}
         alt=""

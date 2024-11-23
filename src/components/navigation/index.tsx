@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import logo from "../../images/ctrlz_logo.png";
+import logo from "../../images/ctrlz-logo-small.png";
 
 import styles from "./navigation.module.scss";
 
@@ -41,9 +41,9 @@ export default function Navigation() {
         <li>
           <Link href="/radio">Radio</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="https://store.ctrlz.club">Store</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

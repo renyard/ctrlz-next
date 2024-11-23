@@ -25,6 +25,14 @@ const nextConfig = {
       source: "/newsletter/:slug",
       destination: "/newsletter/post/:slug",
     },
+    {
+      source: "/djs",
+      destination: "/djs/list/1",
+    },
+    {
+      source: "/djs/:page(\\d{1,})",
+      destination: "/djs/list/:page",
+    },
   ],
   redirects: async () => [
     {
@@ -68,7 +76,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "radiojar-lib.appspot.com",
+        hostname: "media.radio.co",
         port: "",
         pathname: "/**",
       },
