@@ -16,11 +16,17 @@ export const generateStaticParams = async () => {
   return params;
 };
 
-export const generateMetadata = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
+export const generateMetadata = async (
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) => {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const { item } = getDJ(slug);
 
   return {
@@ -29,11 +35,17 @@ export const generateMetadata = async ({
   };
 };
 
-export default async function DJPage({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
+export default async function DJPage(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const dj = await getDJ(slug);
   const image = await import(`@/images/djs/${dj.item.data.slug}.jpg`);
 

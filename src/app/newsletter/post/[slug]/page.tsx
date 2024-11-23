@@ -17,11 +17,17 @@ export const metadata = {
     "A bitesize weekly newsletter with the latest tunes and updates from CTRL Z",
 };
 
-export default async function NewsletterPost({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
+export default async function NewsletterPost(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const post = await getNewsletterPost(slug);
 
   return (

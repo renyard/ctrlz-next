@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { GetStaticPropsContext } from "next";
 import Link from "next/link";
 
 import LiveStream from "@/components/live-stream";
@@ -32,7 +33,17 @@ export const metadata: Metadata = {
   description: "Your weekly fix of Modern Acid House & Techno.",
 };
 
-export default async function Podcast({ params: { page: pageStr = "1" } }) {
+interface PodcastProps {
+  params: Promise<{
+    page: string;
+  }>;
+}
+
+export default async function Podcast(props: PodcastProps) {
+  const params = await props.params;
+
+  const { page: pageStr = "1" } = params;
+
   const page = parseInt(pageStr, 10);
   const numberOfPages = await getNumberOfPages();
   const start = (page - 1) * PAGE_SIZE;

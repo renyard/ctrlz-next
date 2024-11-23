@@ -17,11 +17,17 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export async function generateMetadata(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   const episode = await getPodcastEpisode(id);
 
   return {
@@ -30,11 +36,17 @@ export async function generateMetadata({
   };
 }
 
-export default async function Podcast({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default async function Podcast(
+  props: {
+    params: Promise<{ id: string }>;
+  }
+) {
+  const params = await props.params;
+
+  const {
+    id
+  } = params;
+
   const episode = await getPodcastEpisode(id);
 
   return (
