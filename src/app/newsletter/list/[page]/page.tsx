@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { GetStaticPropsContext } from "next";
 
 import NewsletterForm from "@/components/newsletter-form";
 import NewsletterTiles from "@/components/newsletter-tiles";
@@ -32,7 +33,17 @@ export const metadata: Metadata = {
     "A bitesize weekly newsletter with the latest tunes and updates from CTRL Z",
 };
 
-export default async function Newsletter({ params: { page: pageStr = "1" } }) {
+interface NewsletterProps {
+  params: Promise<{
+    page: string;
+  }>;
+}
+
+export default async function Newsletter(props: NewsletterProps) {
+  const params = await props.params;
+
+  const { page: pageStr = "1" } = params;
+
   const page = parseInt(pageStr, 10);
   const numberOfPages = await getNumberOfPages();
 

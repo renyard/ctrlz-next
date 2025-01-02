@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { GetStaticPropsContext } from "next";
 
 import DjsTiles from "@/components/djs-tiles";
 import Title from "@/components/title";
@@ -29,7 +30,17 @@ export const metadata: Metadata = {
   description: "The DJs of CTRL Z",
 };
 
-export default async function DJs({ params: { page: pageStr = "1" } }) {
+interface DJsProps {
+  params: Promise<{
+    page: string;
+  }>;
+}
+
+export default async function DJs(props: DJsProps) {
+  const { params } = props;
+
+  const { page: pageStr = "1" } = await params;
+
   return (
     <>
       <Title

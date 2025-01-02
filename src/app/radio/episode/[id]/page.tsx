@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 import AudioPlayer from "@/components/audio-player";
@@ -17,11 +18,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params: { id },
-}: {
-  params: { id: string };
+export async function generateMetadata(props: {
+  params: Promise<{ id: string }>;
 }) {
+  const params = await props.params;
+
+  const { id } = params;
+
   const episode = await getPodcastEpisode(id);
 
   return {
@@ -30,15 +33,20 @@ export async function generateMetadata({
   };
 }
 
-export default async function Podcast({
-  params: { id },
-}: {
-  params: { id: string };
+export default async function Podcast(props: {
+  params: Promise<{ id: string }>;
 }) {
+  const params = await props.params;
+
+  const { id } = params;
+
   const episode = await getPodcastEpisode(id);
 
   return (
     <>
+      <Head>
+        <meta property="og:image" content={episode.image.src} />
+      </Head>
       <Title title={episode.title} image={episode.image} />
       <NewsletterForm />
       <AudioPlayer src={episode.enclosure} className={styles.player} />
@@ -52,9 +60,8 @@ export default async function Podcast({
           <Link href="https://undergroundkollektiv.co.uk">
             Underground Kollektiv
           </Link>
-          , Radio Roadhouse and on the{" "}
-          <Link href="https://podcast.ctrlz.club">podcast</Link>. It also goes
-          out monthly on{" "}
+          and on the <Link href="https://podcast.ctrlz.club">podcast</Link>. It
+          also goes out monthly on{" "}
           <Link href="https://ibizaclubnews.net">Ibiza Club News Radio</Link>.
         </p>
 
@@ -67,7 +74,6 @@ export default async function Podcast({
               CTRL Z Podcast
             </Link>
           </li>
-          <li>Saturday 11pm GMT/BST - Radio Roadhouse</li>
           <li>Monthly - Ibiza Club News Radio</li>
         </ul>
         <div
