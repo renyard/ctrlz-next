@@ -912,6 +912,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/rss@npm:^0.0.32":
+  version: 0.0.32
+  resolution: "@types/rss@npm:0.0.32"
+  checksum: 10/72a5e02ac4fdc0c768412172773f7cc07d74dbb0068b1eb895217bd27a3358c65a6d42c970fba7170e37242bfdcac6205b15526e9a9e358231dca413d7ae1667
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0":
   version: 8.15.0
   resolution: "@typescript-eslint/eslint-plugin@npm:8.15.0"
@@ -1604,6 +1611,7 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:types-react@19.0.0-rc.1"
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    "@types/rss": "npm:^0.0.32"
     "@vercel/analytics": "npm:^1.2.2"
     "@vercel/speed-insights": "npm:^1.0.10"
     eslint: "npm:^8"
@@ -1615,6 +1623,7 @@ __metadata:
     react: "npm:19.0.0-rc.1"
     react-dom: "npm:19.0.0-rc.1"
     react-h5-audio-player: "npm:^3.9.1"
+    rss: "npm:^1.2.2"
     rss-parser: "npm:^3.13.0"
     sass: "npm:^1.70.0"
     sharp: "npm:^0.33.2"
@@ -3428,6 +3437,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mime-db@npm:~1.25.0":
+  version: 1.25.0
+  resolution: "mime-db@npm:1.25.0"
+  checksum: 10/04c91aa98beb40ae83dc6243bc01fc19a0024ccf8c2e8635e568f33c3a50f6bbc3b50a3a71a20ab789ceec8425446d9b46f09dd8fc22d6d54505c6af22fd59a3
+  languageName: node
+  linkType: hard
+
+"mime-types@npm:2.1.13":
+  version: 2.1.13
+  resolution: "mime-types@npm:2.1.13"
+  dependencies:
+    mime-db: "npm:~1.25.0"
+  checksum: 10/e76a6749e9e483eb57a90c7f081cc16b38a06c1668484a60db83841b684f3c872c2f3219117db9f312485e94ca958f24cbc1bfa5dbfe5123d213476e7ae11fbb
+  languageName: node
+  linkType: hard
+
 "minimatch@npm:^3.0.5, minimatch@npm:^3.1.1, minimatch@npm:^3.1.2":
   version: 3.1.2
   resolution: "minimatch@npm:3.1.2"
@@ -4180,6 +4205,16 @@ __metadata:
     entities: "npm:^2.0.3"
     xml2js: "npm:^0.5.0"
   checksum: 10/c27fc0c3c2775b915d8b34d59325aadb96184a0903f566c1cb17571ea930eb8be347739ab478a17f948ed5f71b464e0b5208e6627ae16847fa7ce3783ded77ff
+  languageName: node
+  linkType: hard
+
+"rss@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "rss@npm:1.2.2"
+  dependencies:
+    mime-types: "npm:2.1.13"
+    xml: "npm:1.0.1"
+  checksum: 10/0121e1c826a65961155efa5288d90ee592361edf0b3d1dc134bca37b7baa51027d324f5b404b37861954570110560decdc5b9397256c274e20ecb32007b39dbe
   languageName: node
   linkType: hard
 
@@ -5206,6 +5241,13 @@ __metadata:
     sax: "npm:>=0.6.0"
     xmlbuilder: "npm:~11.0.0"
   checksum: 10/27c4d759214e99be5ec87ee5cb1290add427fa43df509d3b92d10152b3806fd2f7c9609697a18b158ccf2caa01e96af067cdba93196f69ca10c90e4f79a08896
+  languageName: node
+  linkType: hard
+
+"xml@npm:1.0.1":
+  version: 1.0.1
+  resolution: "xml@npm:1.0.1"
+  checksum: 10/6c4c31a1308e45732e5ac6b50edbca0e8f7abe5cb5de10215d8e3c688819fe7c7706e056f6fb59b1a23fdf1000c2d7a8bba0a89e94aa1796cd2376d9a5ba401e
   languageName: node
   linkType: hard
 

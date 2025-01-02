@@ -10,6 +10,7 @@ export type episode = {
   image: StaticImageData;
   enclosure: string;
   slug: string;
+  date: string;
 };
 
 // Load all images into an array from the @/images/podcast directory
@@ -56,6 +57,7 @@ export const getPodcast: () => Promise<episode[]> = async () => {
       image: images[episode % 34],
       enclosure: item.enclosure?.url || "",
       slug: `${year}-${month}-${day}`,
+      date: item.pubDate!,
     };
   });
 
