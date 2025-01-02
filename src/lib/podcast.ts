@@ -1,5 +1,6 @@
 import fs from "fs";
 import { StaticImageData } from "next/dist/shared/lib/get-img-props";
+import path from "path";
 import Parser from "rss-parser";
 
 export type episode = {
@@ -15,7 +16,7 @@ export type episode = {
 
 // Load all images into an array from the @/images/podcast directory
 const images: StaticImageData[] = [];
-fs.readdirSync(`src/images/podcast`)
+fs.readdirSync(path.join(process.cwd(), "src/images/podcast"))
   .filter((file) => /\.jpg$/.test(file))
   .forEach(async (file) => {
     const { default: image } = await import(`@/images/podcast/${file}`);
