@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 
 import AudioPlayer from "@/components/audio-player";
@@ -30,6 +29,9 @@ export async function generateMetadata(props: {
   return {
     title: `${episode.title} | CTRL Z`,
     description: episode.description,
+    openGraph: {
+      images: [episode.image?.src],
+    },
   };
 }
 
@@ -44,9 +46,6 @@ export default async function Podcast(props: {
 
   return (
     <>
-      <Head>
-        <meta property="og:image" content={episode.image.src} />
-      </Head>
       <Title title={episode.title} image={episode.image} />
       <NewsletterForm />
       <AudioPlayer src={episode.enclosure} className={styles.player} />
