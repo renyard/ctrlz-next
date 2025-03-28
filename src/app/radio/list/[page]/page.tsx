@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { GetStaticPropsContext } from "next";
 import Link from "next/link";
 
-import LiveStream from "@/components/live-stream";
+// import LiveStream from "@/components/live-stream";
 import Pagination from "@/components/pagination";
 import PodcastTiles from "@/components/podcast-tiles";
 import Title from "@/components/title";
@@ -75,7 +75,7 @@ export default async function Podcast(props: PodcastProps) {
         }
         image={mixerImg}
       />
-      <LiveStream src="https://s2.radio.co/s738c40d83/listen" />
+      {/* <LiveStream src="https://s2.radio.co/s738c40d83/listen" /> */}
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}
