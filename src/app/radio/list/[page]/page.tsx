@@ -8,6 +8,7 @@ import PodcastTiles from "@/components/podcast-tiles";
 import Title from "@/components/title";
 import mixerImg from "@/images/mixer.jpg";
 import { getPodcast } from "@/lib/podcast";
+import { getLatestYouTubeVideo } from "@/lib/youtube";
 
 export const dynamicParams = false;
 
@@ -49,6 +50,8 @@ export default async function Podcast(props: PodcastProps) {
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
+  const video = await getLatestYouTubeVideo();
+
   return (
     <>
       <Title
@@ -71,11 +74,22 @@ export default async function Podcast(props: PodcastProps) {
             <Link href="https://ibizaclubnews.net" target="_blank">
               Ibiza Club Radio
             </Link>
+            <br />
+            <br />
+            Subscribe on{" "}
+            <Link href="https://www.youtube.com/@ctrlzclub" target="_blank">
+              YouTube
+            </Link>{" "}
+            for the latest video mixes
           </>
         }
         image={mixerImg}
       />
-      {/* <LiveStream src="https://s2.radio.co/s738c40d83/listen" /> */}
+      <iframe
+        src={`https://www.youtube.com/embed/${video.id}`}
+        frameBorder={0}
+        style={{ display: "block", width: "100%", aspectRatio: "16/9" }}
+      ></iframe>
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}
