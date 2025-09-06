@@ -20,7 +20,7 @@ export async function GET() {
     feed.item({
       title: post.title,
       description: `On the CTRL Z Radio Show this week we have tunes from ${post.featuredArtists.slice(0, 3).join(", ")} and more. Comment "podcast" for the link.`,
-      url: "",
+      url: `${site_url}/radio/${post.slug}`,
       date: new Date(post.date),
     });
   });
