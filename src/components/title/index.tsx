@@ -1,17 +1,17 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
-import { ReactNode } from "react";
+import { StaticImport } from "next/dist/shared/lib/get-img-props"
+import Image from "next/image"
+import { ReactNode } from "react"
 
-import styles from "./title.module.scss";
+import styles from "./title.module.scss"
 
 export default function Title({
   title,
   subtitle,
   image,
 }: {
-  title: string;
-  subtitle?: string | ReactNode;
-  image: string | StaticImport;
+  title: string
+  subtitle?: string | ReactNode
+  image: string | StaticImport
 }) {
   return (
     <div className={styles.container}>
@@ -31,5 +31,5 @@ export default function Title({
         </h2>
       )}
     </div>
-  );
+  )
 }

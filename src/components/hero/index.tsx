@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
-import { getNewsletter } from "@/lib/beehiiv";
+import { getNewsletter } from "@/lib/beehiiv"
 
-import styles from "./hero.module.scss";
+import styles from "./hero.module.scss"
 
 export default async function Hero() {
-  const newsletters = await getNewsletter();
-  const newsletter = newsletters[0];
+  const newsletters = await getNewsletter()
+  const newsletter = newsletters[0]
 
   return (
     <div className={styles.hero}>
@@ -30,5 +30,5 @@ export default async function Hero() {
         </h2>
       </Link>
     </div>
-  );
+  )
 }

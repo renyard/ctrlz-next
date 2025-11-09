@@ -1,41 +1,41 @@
-"use client";
+"use client"
 
-import fetchJsonp from "fetch-jsonp";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import fetchJsonp from "fetch-jsonp"
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
-import defaultImage from "../../images/ctrlz-logo-small.png";
-import AudioPlayer from "../audio-player";
+import defaultImage from "../../images/ctrlz-logo-small.png"
+import AudioPlayer from "../audio-player"
 
-import styles from "./live-stream.module.scss";
+import styles from "./live-stream.module.scss"
 
 export default function LiveStream({
   src,
   className,
 }: {
-  src: string;
-  className?: string;
+  src: string
+  className?: string
 }) {
-  const [image, setImage] = useState(defaultImage);
-  const [imageLoading, setImageLoading] = useState(true);
+  const [image, setImage] = useState(defaultImage)
+  const [imageLoading, setImageLoading] = useState(true)
   useEffect(() => {
     const updateThumbnail = async () => {
       const response = await fetch(
         "https://public.radio.co/stations/s738c40d83/status",
-      );
+      )
       const {
         current_track: { artwork_url_large: thumb },
-      } = await response.json();
+      } = await response.json()
 
-      setImageLoading(false);
-      setImage(thumb || defaultImage);
-    };
+      setImageLoading(false)
+      setImage(thumb || defaultImage)
+    }
 
-    updateThumbnail();
+    updateThumbnail()
 
-    const timer = setInterval(updateThumbnail, 10000);
-    return () => clearInterval(timer);
-  }, []);
+    const timer = setInterval(updateThumbnail, 10000)
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <div className={`${styles["stream-container"]} ${className}`}>
@@ -49,5 +49,5 @@ export default function LiveStream({
       />
       <AudioPlayer src={src} />
     </div>
-  );
+  )
 }

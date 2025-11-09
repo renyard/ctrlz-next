@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image"
+import Link from "next/link"
+import { useState } from "react"
 
-import logo from "../../images/ctrlz-logo-small.png";
+import logo from "../../images/ctrlz-logo-small.png"
 
-import styles from "./navigation.module.scss";
+import styles from "./navigation.module.scss"
 
 export default function Navigation() {
-  const [navVisible, setNavVisible] = useState(false);
+  const [navVisible, setNavVisible] = useState(false)
 
   return (
     <nav className={styles.nav}>
@@ -46,5 +46,5 @@ export default function Navigation() {
         </li> */}
       </ul>
     </nav>
-  );
+  )
 }

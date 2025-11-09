@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import Image, { StaticImageData } from "next/image"
+import Link from "next/link"
 
-import styles from "./tile.module.scss";
+import styles from "./tile.module.scss"
 
 export default async function Tile({
   title,
@@ -9,10 +9,10 @@ export default async function Tile({
   image,
   link,
 }: {
-  title: string;
-  subtitle?: string;
-  image: string | StaticImageData;
-  link: string;
+  title: string
+  subtitle?: string
+  image: string | StaticImageData
+  link: string
 }) {
   return (
     <li className={styles.tile}>
@@ -38,5 +38,5 @@ export default async function Tile({
         </span>
       </Link>
     </li>
-  );
+  )
 }

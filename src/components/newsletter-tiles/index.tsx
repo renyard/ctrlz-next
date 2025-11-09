@@ -1,17 +1,17 @@
-import { getNewsletter } from "@/lib/beehiiv";
+import { getNewsletter } from "@/lib/beehiiv"
 
-import Tile from "../tile";
+import Tile from "../tile"
 
-import styles from "./newsletter-tiles.module.scss";
+import styles from "./newsletter-tiles.module.scss"
 
 export default async function NewsletterTiles({
   start = 1,
   end = 13,
 }: {
-  start?: number;
-  end?: number;
+  start?: number
+  end?: number
 }) {
-  const newsletters = await getNewsletter();
+  const newsletters = await getNewsletter()
 
   return (
     <ul className={styles.tiles}>
@@ -24,5 +24,5 @@ export default async function NewsletterTiles({
         />
       ))}
     </ul>
-  );
+  )
 }

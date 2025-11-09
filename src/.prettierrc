@@ -3,5 +3,6 @@
   "importOrder": ["^@/(.*)$", "^[./](?!.*.s?css$)", "^[./].*.s?css$"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "importOrderCaseInsensitive": true
+  "importOrderCaseInsensitive": true,
+  "semi": false
 }

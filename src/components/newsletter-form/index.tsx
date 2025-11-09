@@ -1,4 +1,4 @@
-import styles from "./newsletter-form.module.scss";
+import styles from "./newsletter-form.module.scss"
 
 export default function NewsletterForm() {
   return (
@@ -26,5 +26,5 @@ export default function NewsletterForm() {
         ></iframe>
       </div>
     </div>
-  );
+  )
 }

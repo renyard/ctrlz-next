@@ -1,53 +1,45 @@
-import Image from "next/image";
+import Image from "next/image"
 
-import Title from "@/components/title";
-import mixerImg from "@/images/mixer.jpg";
-import { getDJ, getDJs } from "@/lib/djs";
+import Title from "@/components/title"
+import mixerImg from "@/images/mixer.jpg"
+import { getDJ, getDJs } from "@/lib/djs"
 
-export const dynamicParams = false;
+export const dynamicParams = false
 
 export const generateStaticParams = async () => {
-  const djs = await getDJs();
+  const djs = await getDJs()
 
   const params = djs.map((dj) => ({
     slug: dj.item.data.slug,
-  }));
+  }))
 
-  return params;
-};
+  return params
+}
 
-export const generateMetadata = async (
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) => {
-  const params = await props.params;
+export const generateMetadata = async (props: {
+  params: Promise<{ slug: string }>
+}) => {
+  const params = await props.params
 
-  const {
-    slug
-  } = params;
+  const { slug } = params
 
-  const { item } = getDJ(slug);
+  const { item } = getDJ(slug)
 
   return {
     title: `${item.data.name} | CTRL Z`,
     description: item.data.bio,
-  };
-};
-
-export default async function DJPage(
-  props: {
-    params: Promise<{ slug: string }>;
   }
-) {
-  const params = await props.params;
+}
 
-  const {
-    slug
-  } = params;
+export default async function DJPage(props: {
+  params: Promise<{ slug: string }>
+}) {
+  const params = await props.params
 
-  const dj = await getDJ(slug);
-  const image = await import(`@/images/djs/${dj.item.data.slug}.jpg`);
+  const { slug } = params
+
+  const dj = await getDJ(slug)
+  const image = await import(`@/images/djs/${dj.item.data.slug}.jpg`)
 
   return (
     <>
@@ -61,5 +53,5 @@ export default async function DJPage(
       <p>Slug: {slug}</p>
       {dj.item.content}
     </>
-  );
+  )
 }

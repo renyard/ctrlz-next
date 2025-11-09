@@ -1,30 +1,30 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import AudioPlayer from "@/components/audio-player";
-import NewsletterForm from "@/components/newsletter-form";
-import Title from "@/components/title";
-import { getPodcast, getPodcastEpisode } from "@/lib/podcast";
+import AudioPlayer from "@/components/audio-player"
+import NewsletterForm from "@/components/newsletter-form"
+import Title from "@/components/title"
+import { getPodcast, getPodcastEpisode } from "@/lib/podcast"
 
-import styles from "./episode.module.scss";
+import styles from "./episode.module.scss"
 
-export const dynamicParams = false;
+export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const items = await getPodcast();
+  const items = await getPodcast()
 
   return items.map((item) => ({
     id: item.slug,
-  }));
+  }))
 }
 
 export async function generateMetadata(props: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string }>
 }) {
-  const params = await props.params;
+  const params = await props.params
 
-  const { id } = params;
+  const { id } = params
 
-  const episode = await getPodcastEpisode(id);
+  const episode = await getPodcastEpisode(id)
 
   return {
     title: `${episode.title} | CTRL Z`,
@@ -32,17 +32,17 @@ export async function generateMetadata(props: {
     openGraph: {
       images: [episode.image?.src],
     },
-  };
+  }
 }
 
 export default async function Podcast(props: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string }>
 }) {
-  const params = await props.params;
+  const params = await props.params
 
-  const { id } = params;
+  const { id } = params
 
-  const episode = await getPodcastEpisode(id);
+  const episode = await getPodcastEpisode(id)
 
   return (
     <>
@@ -81,5 +81,5 @@ export default async function Podcast(props: {
         />
       </div>
     </>
-  );
+  )
 }

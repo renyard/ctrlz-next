@@ -1,56 +1,56 @@
-import { Metadata } from "next";
-import { GetStaticPropsContext } from "next";
-import Link from "next/link";
+import { Metadata } from "next"
+import { GetStaticPropsContext } from "next"
+import Link from "next/link"
 
 // import LiveStream from "@/components/live-stream";
-import Pagination from "@/components/pagination";
-import PodcastTiles from "@/components/podcast-tiles";
-import Title from "@/components/title";
-import mixerImg from "@/images/mixer.jpg";
-import { getPodcast } from "@/lib/podcast";
-import { getLatestYouTubeVideo } from "@/lib/youtube";
+import Pagination from "@/components/pagination"
+import PodcastTiles from "@/components/podcast-tiles"
+import Title from "@/components/title"
+import mixerImg from "@/images/mixer.jpg"
+import { getPodcast } from "@/lib/podcast"
+import { getLatestYouTubeVideo } from "@/lib/youtube"
 
-export const dynamicParams = false;
+export const dynamicParams = false
 
-const PAGE_SIZE = 18;
+const PAGE_SIZE = 18
 
 const getNumberOfPages = async () => {
-  const { length } = await getPodcast();
-  return Math.ceil(length / PAGE_SIZE);
-};
+  const { length } = await getPodcast()
+  return Math.ceil(length / PAGE_SIZE)
+}
 
 export async function generateStaticParams() {
-  const numberOfPages = await getNumberOfPages();
+  const numberOfPages = await getNumberOfPages()
 
   const params = Array.from({ length: numberOfPages }).map((_, i) => ({
     page: `${i + 1}`,
-  }));
+  }))
 
-  return params;
+  return params
 }
 
 export const metadata: Metadata = {
   title: "Radio Show | CTRL Z",
   description: "Your weekly fix of Modern Acid House & Techno.",
-};
+}
 
 interface PodcastProps {
   params: Promise<{
-    page: string;
-  }>;
+    page: string
+  }>
 }
 
 export default async function Podcast(props: PodcastProps) {
-  const params = await props.params;
+  const params = await props.params
 
-  const { page: pageStr = "1" } = params;
+  const { page: pageStr = "1" } = params
 
-  const page = parseInt(pageStr, 10);
-  const numberOfPages = await getNumberOfPages();
-  const start = (page - 1) * PAGE_SIZE;
-  const end = start + PAGE_SIZE;
+  const page = parseInt(pageStr, 10)
+  const numberOfPages = await getNumberOfPages()
+  const start = (page - 1) * PAGE_SIZE
+  const end = start + PAGE_SIZE
 
-  const video = await getLatestYouTubeVideo();
+  const video = await getLatestYouTubeVideo()
 
   return (
     <>
@@ -98,5 +98,5 @@ export default async function Podcast(props: PodcastProps) {
         asPattern="/radio/[page]"
       />
     </>
-  );
+  )
 }

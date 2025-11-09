@@ -1,34 +1,30 @@
-import Title from "@/components/title";
-import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv";
+import Title from "@/components/title"
+import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv"
 
-export const dynamicParams = false;
+export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const items = await getNewsletter();
+  const items = await getNewsletter()
 
   return items.map((item) => ({
     slug: item.slug,
-  }));
+  }))
 }
 
 export const metadata = {
   title: "Newsletter | CTRL Z",
   description:
     "A bitesize weekly newsletter with the latest tunes and updates from CTRL Z",
-};
+}
 
-export default async function NewsletterPost(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
-  const params = await props.params;
+export default async function NewsletterPost(props: {
+  params: Promise<{ slug: string }>
+}) {
+  const params = await props.params
 
-  const {
-    slug
-  } = params;
+  const { slug } = params
 
-  const post = await getNewsletterPost(slug);
+  const post = await getNewsletterPost(slug)
 
   return (
     <>
@@ -77,5 +73,5 @@ export default async function NewsletterPost(
         dangerouslySetInnerHTML={{ __html: post.content.free.web }}
       />
     </>
-  );
+  )
 }

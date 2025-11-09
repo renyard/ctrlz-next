@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import styles from "./pagination.module.scss";
+import styles from "./pagination.module.scss"
 
 const getAsLink = (asPattern: string, page: number) =>
-  asPattern.replace("[page]", `${page}`);
+  asPattern.replace("[page]", `${page}`)
 
 export default function Pagination({
   numberOfPages,
@@ -11,12 +11,12 @@ export default function Pagination({
   href,
   asPattern,
 }: {
-  numberOfPages: number;
-  currentPage: number;
-  href: string;
-  asPattern: string;
+  numberOfPages: number
+  currentPage: number
+  href: string
+  asPattern: string
 }) {
-  const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
+  const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1)
 
   return (
     <ul className={styles.list}>
@@ -55,5 +55,5 @@ export default function Pagination({
         </Link>
       </li>
     </ul>
-  );
+  )
 }
