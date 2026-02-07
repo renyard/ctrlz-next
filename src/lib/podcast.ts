@@ -23,18 +23,20 @@ fs.readdirSync(path.join(process.cwd(), "src/images/podcast"))
     images.push(image)
   })
 
-export const getPodcast: () => Promise<episode[]> = async () => {
+const getPodcastImpl = async (): Promise<episode[]> => {
   const parser = new Parser()
   // console.log("[podcast] Fetching podcast feed...");
-  const res = await fetch("https://podcast.ctrlz.club/rss.xml")
+  const res = await fetch("https://podcast.ctrlz.club/rss.xml", {
+    cache: "force-cache",
+  })
   const feed = await parser.parseString(await res.text())
 
   const items = feed.items.map((item) => {
     const date = new Date(item.pubDate as string)
     const [year, month, day] = [
-      date.getFullYear(),
-      date.getMonth() + 1,
-      date.getDate(),
+      date.getUTCFullYear(),
+      date.getUTCMonth() + 1,
+      date.getUTCDate(),
     ].map((value) => `${value}`.padStart(2, "0"))
 
     const { episode } = item.itunes
@@ -63,6 +65,14 @@ export const getPodcast: () => Promise<episode[]> = async () => {
   })
 
   return items
+}
+
+// Cache for the duration of the build so generateStaticParams and getPodcastEpisode see the same list
+let podcastCache: Promise<episode[]> | null = null
+
+export const getPodcast = (): Promise<episode[]> => {
+  if (!podcastCache) podcastCache = getPodcastImpl()
+  return podcastCache
 }
 
 export const getPodcastEpisode = async (id: string) => {
