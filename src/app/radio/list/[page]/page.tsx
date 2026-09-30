@@ -65,15 +65,11 @@ export default async function Podcast(props: PodcastProps) {
             or on{" "}
             <Link href="https://datatransmission.co" target="_blank">
               Data Transmission
-            </Link>
-            ,{" "}
+            </Link>{" "}
+            or{" "}
             <Link href="https://undergroundkollektiv.co.uk" target="_blank">
               Underground Kollektiv
             </Link>{" "}
-            or{" "}
-            <Link href="https://ibizaclubnews.net" target="_blank">
-              Ibiza Club Radio
-            </Link>
             <br />
             <br />
             Subscribe on{" "}

@@ -65,10 +65,8 @@ export default async function Podcast(props: {
           ,{" "}
           <Link href="https://undergroundkollektiv.co.uk">
             Underground Kollektiv
-          </Link>
-          and on the <Link href="https://podcast.ctrlz.club">podcast</Link>. It
-          also goes out monthly on{" "}
-          <Link href="https://ibizaclubnews.net">Ibiza Club News Radio</Link>.
+          </Link>{" "}
+          and on the <Link href="https://podcast.ctrlz.club">podcast</Link>.
         </p>
 
         <ul className={styles.list}>
@@ -80,7 +78,6 @@ export default async function Podcast(props: {
               CTRL Z Podcast
             </Link>
           </li>
-          <li>Monthly - Ibiza Club News Radio</li>
         </ul>
         <div
           className={styles.description}
