@@ -35,6 +35,13 @@ export async function generateMetadata(props: {
   }
 }
 
+// Split each tracklist item ("Artist - Title") into a bold artist and a title
+const boldArtists = (html: string) =>
+  html.replace(
+    /<li>(.+?) - (.+?)<\/li>/g,
+    "<li><strong>$1</strong><span>$2</span></li>",
+  )
+
 export default async function Podcast(props: {
   params: Promise<{ id: string }>
 }) {
@@ -77,7 +84,7 @@ export default async function Podcast(props: {
         </ul>
         <div
           className={styles.description}
-          dangerouslySetInnerHTML={{ __html: episode.description }}
+          dangerouslySetInnerHTML={{ __html: boldArtists(episode.description) }}
         />
       </div>
     </>
