@@ -8,8 +8,7 @@ import PodcastTiles from "@/components/podcast-tiles"
 import Title from "@/components/title"
 import mixerImg from "@/images/mixer.jpg"
 import { getPodcast } from "@/lib/podcast"
-
-// import { getLatestYouTubeVideo } from "@/lib/youtube"
+import { getLatestYouTubeVideo } from "@/lib/youtube"
 
 export const dynamicParams = false
 
@@ -51,7 +50,7 @@ export default async function Podcast(props: PodcastProps) {
   const start = (page - 1) * PAGE_SIZE
   const end = start + PAGE_SIZE
 
-  // const video = await getLatestYouTubeVideo()
+  const video = await getLatestYouTubeVideo()
 
   return (
     <>
@@ -86,13 +85,11 @@ export default async function Podcast(props: PodcastProps) {
         }
         image={mixerImg}
       />
-      {/* TODO: re-enable once YOUTUBE_API_KEY / YOUTUBE_CHANNEL_ID are set
       <iframe
         src={`https://www.youtube.com/embed/${video.id}`}
         frameBorder={0}
         style={{ display: "block", width: "100%", aspectRatio: "16/9" }}
       ></iframe>
-      */}
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}
