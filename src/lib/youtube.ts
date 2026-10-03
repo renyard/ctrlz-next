@@ -13,6 +13,20 @@ const parseDuration = (duration: string) => {
 }
 
 export const getLatestYouTubeVideo = async () => {
+  if (!process.env.YOUTUBE_API_KEY || !process.env.YOUTUBE_CHANNEL_ID) {
+    console.warn("YOUTUBE_API_KEY or YOUTUBE_CHANNEL_ID is not set")
+    return null
+  }
+
+  try {
+    return await fetchLatestYouTubeVideo()
+  } catch (error) {
+    console.warn("Unable to load latest YouTube video", error)
+    return null
+  }
+}
+
+const fetchLatestYouTubeVideo = async () => {
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/search?key=${process.env.YOUTUBE_API_KEY}&channelId=${process.env.YOUTUBE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=50`,
   )
