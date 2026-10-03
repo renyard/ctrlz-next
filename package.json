@@ -19,7 +19,7 @@
     "next": "15.5.27",
     "react": "19",
     "react-dom": "19",
-    "react-h5-audio-player": "^3.9.1",
+    "react-h5-audio-player": "^3.10.2",
     "rss": "^1.2.2",
     "rss-parser": "^3.13.0",
     "sass": "^1.70.0",

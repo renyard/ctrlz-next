@@ -1587,14 +1587,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify/react@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@iconify/react@npm:4.1.1"
+"@iconify/react@npm:^5":
+  version: 5.2.1
+  resolution: "@iconify/react@npm:5.2.1"
   dependencies:
     "@iconify/types": "npm:^2.0.0"
   peerDependencies:
     react: ">=16"
-  checksum: 10/66405fe14dbf7a2f4cc9bae364a1f4a0b2cebdd74c8eb4fe6eb369050e2f34989fccb4d0ac259f8a3873d66eb506bbbd7a12e3251f5ee9023f374250ddc2a6c0
+  checksum: 10/b08b7fd6c4aee69cc40a70744f7a976eb7d84b224d4d8392847121b0654ecc86f14e491c322fe64bc958bf3d09bcc2b3584ef16cb55df441971839165c4e2ff6
   languageName: node
   linkType: hard
 
@@ -4197,7 +4197,7 @@ __metadata:
     prettier: "npm:^3.2.5"
     react: "npm:19"
     react-dom: "npm:19"
-    react-h5-audio-player: "npm:^3.9.1"
+    react-h5-audio-player: "npm:^3.10.2"
     rss: "npm:^1.2.2"
     rss-parser: "npm:^3.13.0"
     sass: "npm:^1.70.0"
@@ -7874,16 +7874,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-h5-audio-player@npm:^3.9.1":
-  version: 3.9.1
-  resolution: "react-h5-audio-player@npm:3.9.1"
+"react-h5-audio-player@npm:^3.10.2":
+  version: 3.10.2
+  resolution: "react-h5-audio-player@npm:3.10.2"
   dependencies:
     "@babel/runtime": "npm:^7.10.2"
-    "@iconify/react": "npm:^4.1.1"
+    "@iconify/react": "npm:^5"
   peerDependencies:
-    react: ^16.3.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/98ac0bd1387319b67b69f15c3a2e3b0bde60b3eb6fbd0869201720e92f9f492f20b930ad4ec1f9673ef7cf221a4960be75a6cfd4e140f935d912c855c6cc6456
+    react: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/be3807c0ed3d20994bdd58b06cc6ef395f18d33aee6ca2ee997d77cd52818e20a1fe0a2c252dbbb6c09cee0f100c73c7728c02b3e77c16d273f100316ad212e4
   languageName: node
   linkType: hard
 
