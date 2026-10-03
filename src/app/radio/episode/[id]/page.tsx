@@ -38,7 +38,7 @@ export async function generateMetadata(props: {
 // Split each tracklist item ("Artist - Title") into a bold artist and a title
 const boldArtists = (html: string) =>
   html.replace(
-    /<li>(.+?) - (.+?)<\/li>/g,
+    /<li>((?:(?!<\/?li>).)+?) - ((?:(?!<\/?li>).)+?)<\/li>/g,
     "<li><strong>$1</strong><span>$2</span></li>",
   )
 
