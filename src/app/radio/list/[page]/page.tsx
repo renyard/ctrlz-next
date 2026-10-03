@@ -85,11 +85,13 @@ export default async function Podcast(props: PodcastProps) {
         }
         image={mixerImg}
       />
-      <iframe
-        src={`https://www.youtube.com/embed/${video.id}`}
-        frameBorder={0}
-        style={{ display: "block", width: "100%", aspectRatio: "16/9" }}
-      ></iframe>
+      {video && (
+        <iframe
+          src={`https://www.youtube.com/embed/${video.id}`}
+          frameBorder={0}
+          style={{ display: "block", width: "100%", aspectRatio: "16/9" }}
+        ></iframe>
+      )}
       <PodcastTiles start={start} end={end} />
       <Pagination
         numberOfPages={numberOfPages}
