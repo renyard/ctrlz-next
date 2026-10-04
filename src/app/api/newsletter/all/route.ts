@@ -1,5 +1,7 @@
 import { getNewsletter } from "@/lib/beehiiv"
 
+export const dynamic = "force-static"
+
 export async function GET() {
   const allPosts = await getNewsletter()
 
