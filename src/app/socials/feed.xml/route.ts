@@ -2,6 +2,8 @@ import RSS from "rss"
 
 import { getPodcast } from "@/lib/podcast"
 
+export const dynamic = "force-static"
+
 export async function GET() {
   const site_url = "https://www.ctrlz.club"
   const allPosts = await getPodcast() // Fetch your posts data

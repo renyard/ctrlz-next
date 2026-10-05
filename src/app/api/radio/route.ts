@@ -1,5 +1,7 @@
 import { getPodcast } from "@/lib/podcast"
 
+export const dynamic = "force-static"
+
 export async function GET() {
   const allPosts = await getPodcast()
 

@@ -1,4 +1,12 @@
-import { getNewsletterPost } from "@/lib/beehiiv"
+import { getNewsletter, getNewsletterPost } from "@/lib/beehiiv"
+
+export const dynamic = "force-static"
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  const items = await getNewsletter()
+  return items.map((item) => ({ slug: item.slug }))
+}
 
 export async function GET(_request: Request, props: { params: Promise<{ slug: string }> }) {
   const params = await props.params
